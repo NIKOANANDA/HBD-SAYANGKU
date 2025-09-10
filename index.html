@@ -80,10 +80,19 @@
     <img src="WhatsApp Image 2025-09-10 at 15.19.49_cfb43d1c.jpg">
   </div>
 
-  <audio autoplay>
+  <audio id="bgMusic" loop>
     <source src="musik.mp3" type="audio/mpeg">
-    Browser Anda tidak mendukung audio.
+    Browser kamu tidak mendukung audio.
   </audio>
+
+  <script>
+    document.addEventListener('click', function () {
+      const music = document.getElementById('bgMusic');
+      music.play().catch(function(error) {
+        console.log("Autoplay gagal: " + error);
+      });
+    }, { once: true });
+  </script>
 
   <button onclick="ucapan()">Klik untuk Ucapan Spesial 🎁</button>
 
@@ -95,4 +104,5 @@
 
 </body>
 </html>
+
 
