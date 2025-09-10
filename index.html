@@ -93,7 +93,18 @@
       });
     }, { once: true });
   </script>
-
+<script>
+    let musicPlayed = false;
+    window.addEventListener('scroll', function () {
+      if (!musicPlayed) {
+        const music = document.getElementById('bgMusic');
+        music.play().catch(function(error) {
+          console.log("Autoplay gagal: " + error);
+        });
+        musicPlayed = true;
+      }
+    });
+  </script>
   <button onclick="ucapan()">Klik untuk Ucapan Spesial 🎁</button>
 
   <script>
@@ -104,5 +115,6 @@
 
 </body>
 </html>
+
 
 
